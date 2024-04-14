@@ -12,6 +12,8 @@ const home = require('./src/routes/home');
 app.set('views', './src/views');
 //view를 어떤 엔진으로 해석해줄지. ejs엔진으로 해석(html과 비슷)
 app.set('view engine', 'ejs');
+//login.js 미들웨어 등록
+app.use(express.static(`${__dirname}/src/public`));
 
 //use는 미들웨어를 등록해주는 메서드. '/'경로로 오면 home으로 이동해라
 app.use('/', home);
