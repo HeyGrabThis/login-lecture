@@ -5,11 +5,11 @@ const express = require('express');
 const app = express();
 
 // 라우팅. home이라는 변수 만들어서 경로 추가해줘서 index.js 읽을 수 있게
-const home = require('./routes/home');
+const home = require('./src/routes/home');
 
 //앱 세팅
 //views => 화면 view를 관리해줄 폴더 경로를 오른쪽에 적으면된다.
-app.set('views', './views');
+app.set('views', './src/views');
 //view를 어떤 엔진으로 해석해줄지. ejs엔진으로 해석(html과 비슷)
 app.set('view engine', 'ejs');
 
