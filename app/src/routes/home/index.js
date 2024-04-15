@@ -7,9 +7,12 @@ const router = express.Router();
 const ctrl = require('./home.ctrl');
 
 //루트 경로를 만들어줌 => 그냥 3000번으로 접속했을 때
-router.get('/', ctrl.home);
+router.get('/', ctrl.view.home);
 
-router.get('/login', ctrl.login);
+router.get('/login', ctrl.view.login);
+
+// 로그인 정보 처리 api
+router.post('/login', ctrl.process.login);
 
 // export 해주기
 module.exports = router;

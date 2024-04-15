@@ -1,11 +1,20 @@
 'use strict';
-const home = (req, res) => {
-  //렌더 경로 설정
-  res.render('home/index');
+
+//렌더 경로 설정
+const view = {
+  home: (req, res) => {
+    res.render('home/index');
+  },
+  login: (req, res) => {
+    res.render('home/login');
+  },
 };
 
-const login = (req, res) => {
-  res.render('home/login');
+//프로세스
+const process = {
+  login: (req, res) => {
+    console.log(req.body);
+  },
 };
 
-module.exports = { home, login };
+module.exports = { view, process };
