@@ -1,5 +1,8 @@
 'use strict';
 
+//userStorage 임포트
+const UserStorage = require('../../models/UserStorage');
+
 //렌더 경로 설정
 const view = {
   home: (req, res) => {
@@ -10,16 +13,13 @@ const view = {
   },
 };
 
-//더미 데이터
-const users = {
-  id: ['qwer', 'asdf', 'zxcv'],
-  passward: ['1234', '1234', '123456'],
-};
 //프로세스
 const process = {
   login: (req, res) => {
     const id = req.body.id;
     const passward = req.body.passward;
+    //임포트해온 UserStorage로 users변수만들기
+    const users = UserStorage.getUsers('id', 'passward');
     //users id에 프론트에서 넘어온 id가 있다면
     if (users.id.includes(id)) {
       //인덱스 저장
