@@ -26,7 +26,26 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+.form #registerBtn {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4caf50;
+  width: 90%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form #registerBtn:hover,
+.form #registerBtn:active,
+.form #registerBtn:focus {
+  background: #43a047;
+}
+.form #loginBtn {
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -40,9 +59,9 @@
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,
-.form button:active,
-.form button:focus {
+.form #loginBtn:hover,
+.form #loginBtn:active,
+.form #loginBtn:focus {
   background: #43a047;
 }
 .form .message {
@@ -54,9 +73,7 @@
   color: #4caf50;
   text-decoration: none;
 }
-.form .register-form {
-  /* display: none; */
-}
+
 .container {
   position: relative;
   z-index: 1;
