@@ -28,6 +28,15 @@ class UserStorage {
     }, {});
     return userInfo;
   }
+
+  //회원가입
+  static save(userInfo) {
+    const users = this.#users;
+    users.id.push(userInfo.id);
+    users.password.push(userInfo.password);
+    users.name.push(userInfo.name);
+    return { success: true };
+  }
 }
 
 module.exports = UserStorage;

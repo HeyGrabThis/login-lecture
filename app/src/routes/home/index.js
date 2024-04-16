@@ -15,6 +15,8 @@ router.get('/register', ctrl.view.register);
 
 // 로그인 정보 처리 api
 router.post('/login', ctrl.process.login);
+// 회원가입 데이터 추가 api
+router.post('/register', ctrl.process.register);
 
 // export 해주기
 module.exports = router;
