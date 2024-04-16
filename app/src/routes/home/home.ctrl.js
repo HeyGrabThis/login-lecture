@@ -31,7 +31,7 @@ const process = {
         });
       }
     }
-    return res.jsom({
+    return res.json({
       success: false,
       msg: '로그인에 실패하였습니다.',
     });
