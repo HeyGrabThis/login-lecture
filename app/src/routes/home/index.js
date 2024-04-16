@@ -11,6 +11,8 @@ router.get('/', ctrl.view.home);
 
 router.get('/login', ctrl.view.login);
 
+router.get('/register', ctrl.view.register);
+
 // 로그인 정보 처리 api
 router.post('/login', ctrl.process.login);
 
