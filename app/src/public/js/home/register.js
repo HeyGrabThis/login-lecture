@@ -20,7 +20,7 @@ const register = () => {
     name: name.value,
     password: password.value,
   };
-  console.log(req);
+
   fetch('/register', {
     method: 'POST',
     headers: {
