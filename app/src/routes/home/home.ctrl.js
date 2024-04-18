@@ -18,10 +18,11 @@ const view = {
 
 //프로세스
 const process = {
-  login: (req, res) => {
+  //User.js의 login도 promise를 반환하기에 async await작성
+  login: async (req, res) => {
     //req.body를 보내서 인스턴스 생성
     const user = new User(req.body);
-    const response = user.login();
+    const response = await user.login();
     return res.json(response);
   },
   register: (req, res) => {

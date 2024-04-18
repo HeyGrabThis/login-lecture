@@ -7,9 +7,10 @@ class User {
     this.body = body;
   }
 
-  login() {
+  async login() {
     //body의 id를 넣어 유저의 데이터를 가져오는 UserStorage의 getUserInfo함수 호출
-    const { id, password } = UserStorage.getUserInfo(this.body.id);
+    //getUserInfo가 promise를 반환하므로(데이터를 읽어와야하므로) async,await작성
+    const { id, password } = await UserStorage.getUserInfo(this.body.id);
 
     //입력한 id가 데이터에 있는 id면
     if (id) {
