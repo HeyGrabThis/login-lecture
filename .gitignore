@@ -1,2 +1,2 @@
 .env
-db.js
+./app/src/config/db.js
