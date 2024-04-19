@@ -5,9 +5,12 @@ const express = require('express');
 const app = express();
 //body-parser body데이터를 파싱해주는 모듈
 const bodyParser = require('body-parser');
-
 // 라우팅. home이라는 변수 만들어서 경로 추가해줘서 index.js 읽을 수 있게
 const home = require('./src/routes/home');
+//환경변수. dotenv를 이용하면 어떤 OS를 이용하더라도 동일하게 환경변수를 등록하고 가져올 수 있다.
+const dotenv = require('dotenv');
+//config()를 이용하면 .env에 있는 환경변수를 nodejs에서 이용할 수 있도록 해준다.
+dotenv.config();
 
 //앱 세팅
 //views => 화면 view를 관리해줄 폴더 경로를 오른쪽에 적으면된다.
