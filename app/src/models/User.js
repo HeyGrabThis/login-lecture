@@ -27,7 +27,7 @@ class User {
       }
     } catch (err) {
       //에러 핸들링
-      return { success: false, msg: err };
+      return { success: false, err };
     }
   }
 
@@ -36,7 +36,7 @@ class User {
       const response = await UserStorage.save(this.body);
       return response;
     } catch (err) {
-      return { success: false, msg: err };
+      return { success: false, err };
     }
   }
 }

@@ -11,12 +11,12 @@ class UserStorage {
     //mysql은 그 자체로 promise 객체가 아니므로 promise객체를 만들어서 resolve와 reject로 반환후, 이 promise 객체를 return
     return new Promise((resolve, reject) => {
       //quary매서드로 query문을 보낼 수 있음. 보안상의 이유로 ?와 [넣을 변수]이런식으로 작성
-      const query = 'SELECT * FROM users WHERE id = ?;';
+      const query = 'SELECT * FROM a WHERE id = ?;';
       db.query(query, [id], (err, data) => {
         //err가 객체로 반환되므로 문자열로 바꿔주기 위해${}형식으로 바꾸어준다
         if (err) reject(`${err}`);
         //data를 보면 배열로 감싸져있기 때문에 그 첫번째 값을 반환해준다
-        resolve(data[0]);
+        else resolve(data[0]);
       });
     });
   }
@@ -33,7 +33,7 @@ class UserStorage {
           //err가 객체로 반환되므로 문자열로 바꿔주기 위해${}형식으로 바꾸어준다
           if (err) reject(`${err}`);
           //INSERT하는 것이기 때문에 data인자가 필요하지 않다.
-          resolve({ success: true });
+          else resolve({ success: true });
         }
       );
     });
